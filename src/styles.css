@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+html,body,*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;  
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 15%;
+  font-size: 2rem;
+  background: #2365ad;
+  color: #fff;
+  font-weight: bold;
+}
+.d-flex{display: flex;flex-wrap: wrap}
+.justify-content-center{justify-content: center;align-content: center}
+.container{
+  max-width: 700px;
+  min-height: 85%;
+  margin: auto;
+  margin-top: 2em;
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color:#2c3e50;
+}
+.thumbnail{
+  display: inline-block;
+  background:#eee;
+  font-size: 7rem;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  margin-bottom: .4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text__info{
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.text__info.large{
+  font-size: 3rem;
+}
+
+.message{
+  background: #27ae60;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  width: 100%;
+  transition: all .5s;
+  top: -100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.message.show{
+  top:0;  
+}
