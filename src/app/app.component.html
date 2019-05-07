@@ -1,11 +1,12 @@
 <div class="message" [ngClass]="{'show' : show, 'hide': !show}">ASISTENCIAS ENVIADAS AL SERVIDOR</div>
+<button class="asistencia" (click)="insertarAsistencia()">Enviar</button>
 <div class="container">
   <div class="thumbnail">
     {{alumno | thumbnail}}
   </div>
-  <p class="text__info">{{alumno.descripcion | uppercase}}</p>  
+  <p class="text__info">{{ alumno.apellido | uppercase }}, {{ alumno.nombre | uppercase }} </p>  
   <p class="text__info large">{{alumno.aula | uppercase}}</p>
 </div>
-<footer class="d-flex justify-content-center">
-  <p>{{ alumno.apellido | uppercase }}, {{ alumno.nombre | uppercase }}</p>
+<footer [ngClass]="{'red':even,'blue':!even}" class="d-flex justify-content-center">
+  <p>{{alumno.descripcion | uppercase}}</p>
 </footer>

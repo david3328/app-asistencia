@@ -17,6 +17,7 @@ export class AppComponent {
 
   codigo:string='';
   show:boolean = false;
+  even:boolean=false;
 
   constructor(
     private asistencia:AsistenciaService
@@ -26,27 +27,32 @@ export class AppComponent {
       if(e.key=='Enter'){
         console.log(this.codigo);
         this.alumno = this.asistencia.getAlumno(this.codigo);
+        this.even=!this.even;
         this.codigo='';
       } 
       if(e.ctrlKey && e.altKey && e.keyCode==71){
-        this.asistencia.postearAsistencias()
-        .subscribe(res=>{
-          if (res){
-            this.show=true;
-            setTimeout(() => {
-              this.show = false;
-            }, 2500);
-            this.alumno = {
-              nombre: 'CIMA',
-              apellido: 'Asistencia',
-              descripcion: 'INSTITUCIÓN EDUCATIVA CIMA',
-              aula: 'CIMA'
-            }
-            console.log('ASISTENCIAS ENVIADAS AL SERVIDOR');
-          }
-        })         
+          this.insertarAsistencia();
       }     
     })
+  }
+
+  insertarAsistencia(){
+    this.asistencia.postearAsistencias()
+    .subscribe(res=>{
+      if (res){
+        this.show=true;
+        setTimeout(() => {
+          this.show = false;
+        }, 2500);
+        this.alumno = {
+          nombre: 'CIMA',
+          apellido: 'Asistencia',
+          descripcion: 'INSTITUCIÓN EDUCATIVA CIMA',
+          aula: 'CIMA'
+        }
+        console.log('ASISTENCIAS ENVIADAS AL SERVIDOR');
+      }
+    })  
   }
   
 }

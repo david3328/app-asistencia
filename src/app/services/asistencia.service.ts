@@ -12,7 +12,7 @@ export class AsistenciaService {
   alumnos: any[];
   asistencias: any[];
   ip: String;
-  API: String = 'http://192.168.70.105:3000/api/cimapersonal/asistencia/';
+  API: String = 'http://intranet.cima.com.pe:3000/api/cimapersonal/asistencia/';
 
   constructor(private http: HttpClient) {
     this.obtenerAsistencias();
